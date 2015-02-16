@@ -1,0 +1,38 @@
+#include <allegro.h>
+
+#include "var.cpp"
+#include "game.cpp"
+void init();
+void deinit();
+void handvar();
+
+int main() {
+	init();
+
+
+	loadgame();
+
+	deinit();
+	return 0;
+}
+END_OF_MAIN()
+
+void init() {
+	int depth, res;
+	allegro_init();
+
+
+	set_color_depth(32);
+	set_gfx_mode(GFX_AUTODETECT_WINDOWED, 640,700, 0, 0);
+	
+
+	install_timer();
+	install_keyboard();
+	install_mouse();
+	/* add other initializations here */
+}
+
+void deinit() {
+	clear_keybuf();
+	/* add other deinitializations here */
+}
